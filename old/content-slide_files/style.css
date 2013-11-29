@@ -1,0 +1,300 @@
+/* Slider */
+.ju-contentslider {
+	float: left;
+	position: relative;
+}
+
+.ju-contentslider-introtext, .ju-contentslider-posttext {
+	clear: both;
+	float: left;
+	margin: 10px 0;
+}
+
+.ju-contentslider .ju-slider-wrap {
+	clear: both;
+	float: left;
+	position: relative;
+	padding: 0px;
+	display: inline-block;
+	border: 1px solid #CCCCCC;
+}
+
+.ju-contentslider-vertical .ju-slider-wrap {
+	margin: 0px;
+}
+
+.ju-contentslider .ju-slider-itemwrap {
+	position: relative;
+	overflow: hidden;
+}
+
+.ju-contentslider .ju-slider-item {
+	float: left;
+	margin: 10px;
+	padding: 5px;
+	z-index: 1;
+	width: 100px;
+	height: 140px;
+	min-width: 100px;
+	font-size: 12px;
+	overflow: hidden;
+}
+
+.ju-contentslider .ju-slider-item-inner {
+	max-width: 100% !important;
+	max-height: 100% !important;
+	/*margin: 0 !important;*/
+	overflow: hidden;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.ju-contentslider-horizontal .ju-slider-item-inner {
+	clear: both;
+}
+
+.ju-contentslider-vertical .ju-slider-item-inner {
+	float: left;
+}
+
+.ju-contentslider .ju-slider-image {
+	float: left;
+	margin: 0 10px 10px 0;
+	max-height: 100% !important; /*Make image responsive*/
+	max-width: 100% !important;  /*Make image responsive*/
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.ju-contentslider .ju-slider-image-inner {
+	background: none repeat scroll 0% 0% #FFFFFF;
+	border: 1px solid #CCCCCC;
+	margin: 0px;
+	overflow: hidden;
+	padding: 4px;
+}
+
+.ju-contentslider .ju-slider-image img {
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	max-height: 100% !important; /*Make image responsive*/
+	max-width: 100% !important;  /*Make image responsive*/
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.ju-contentslider .ju-slider-meta {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.ju-contentslider-vertical .ju-slider-meta{
+	margin: 0 10px 10px 0;
+}
+
+.ju-contentslider .ju-slider-meta > div {
+	clear: both;
+	float: left;
+	width: 100%;
+}
+
+.ju-contentslider .ju-slider-meta .title {
+	float: left;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.ju-contentslider .ju-slider-meta .value {
+	float: left;
+}
+
+.ju-contentslider .ju-slider-title {
+	font-weight: bold;
+	line-height: 1.3;
+	font-size: 13px;
+	margin-bottom: 10px;
+}
+
+.ju-contentslider-vertical .ju-slider-title {
+	text-align: left;
+}
+
+.ju-contentslider .ju-slider-title a {
+}
+
+.ju-contentslider .ju-slider-intro {
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+.ju-contentslider .ju-slider-readmore {
+	margin-bottom: 10px;
+	display: inline-block;
+}
+
+.ju-contentslider .ju-slider-readmore a {
+	background: url("images/readmore.png") no-repeat scroll right center transparent;
+	padding-right: 20px;
+	display: inline-block;
+}
+
+/* Next/Prev button */
+.ju-contentslider .ju-slider-nextprev-btn {
+}
+
+.ju-contentslider .ju-slider-nextprev-btn .prev, .ju-contentslider .ju-slider-nextprev-btn .next {
+	background-repeat: no-repeat;
+	position: absolute;
+	cursor: pointer;
+	z-index: 99;
+	top: 50%;
+	margin-top: -10px;
+	text-indent: -9999em;
+	background-position: center 50%;
+	width: 20px;
+	height: 20px;
+}
+
+.ju-contentslider .ju-slider-nextprev-btn .prev {
+	left: -30px;
+	background: url("images/left_arr.png") no-repeat scroll 0px 0px transparent;
+	width: 25px;
+	height: 25px;
+}
+
+.ju-contentslider .ju-slider-nextprev-btn .next {
+	right: -30px;
+	background: url("images/right_arr.png") no-repeat scroll 0px 0px transparent;
+	width: 25px;
+	height: 25px;
+}
+
+.ju-contentslider-vertical .ju-slider-nextprev-btn .prev {
+	background: url("images/up.png") no-repeat scroll 0px 0px transparent;
+	left: 50%;
+	margin-top: 5px;
+	margin-left: -10px;
+	bottom: auto;
+	top: 75px;
+}
+
+.ju-contentslider-vertical .ju-slider-nextprev-btn .next {
+	background: url("images/down.png") no-repeat scroll 0px 0px transparent;
+	bottom: 0px;
+	left: 50%;
+	margin-top: 5px;
+	margin-left: -10px;
+	top: auto;
+}
+
+.ju-contentslider .ju-slider-nextprev-btn .disabled {
+	opacity: 0.5;
+}
+
+/* Navigator */
+.ju-contentslider .ju-slider-navigator-wrap {
+	display: inline-block;
+}
+
+.ju-contentslider .ju-slider-navigator {
+	position: relative;
+	margin: 7px;
+	padding: 5px;
+	border: 1px solid #CCCCCC;
+	clear: both;
+}
+
+.ju-contentslider .ju-slider-navigator span {
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+	font-size: 12px;
+	color: #FFFFFF;
+	padding: 3px 5px;
+	min-height: 10px;
+	min-width: 12px;
+	margin: 0px 5px;
+	background-color: #818181;
+	width: auto;
+}
+
+.ju-contentslider .ju-slider-navigator span.active {
+	background-color: #333333;
+}
+
+/* Control button */
+.ju-contentslider .ju-slider-control-btn-wrap {
+	position: relative;
+	margin: 5px 10px;
+	float: right;
+}
+
+.ju-contentslider-vertical .ju-slider-control-btn-wrap {
+	float: left;
+	clear: both;
+}
+
+.ju-contentslider .ju-slider-control-btn {
+	display: inline-block;
+	position: relative;
+	padding: 2px;
+	float: left;
+}
+
+.ju-contentslider .ju-slider-begin, .ju-contentslider .ju-slider-prev, .ju-contentslider .ju-slider-next, .ju-contentslider .ju-slider-end, .ju-contentslider .ju-slider-stop, .ju-contentslider .ju-slider-pause, .ju-contentslider .ju-slider-play {
+	position: relative;
+	float: left;
+	text-indent: -9999em;
+	width: 24px;
+	height: 24px;
+	display: block;
+	margin: 0px 5px;
+	cursor: pointer;
+}
+
+.ju-contentslider .ju-slider-begin {
+	background: url("images/begin.png") no-repeat scroll 0% 0% transparent;
+}
+
+.ju-contentslider .ju-slider-prev {
+	background: url("images/prev.png") no-repeat scroll 0% 0% transparent;
+}
+
+.ju-contentslider .ju-slider-next {
+	background: url("images/next.png") no-repeat scroll 0% 0% transparent;
+}
+
+.ju-contentslider .ju-slider-end {
+	background: url("images/end.png") no-repeat scroll 0% 0% transparent;
+}
+
+/* Play control button */
+.ju-contentslider .ju-slider-play-control-button {
+	display: inline-block;
+	position: relative;
+	padding: 2px;
+	float: left;
+	margin-right: 5px;
+	height: 25px;
+	width: 30px;
+}
+
+.ju-contentslider .ju-slider-stop {
+	background: url("images/stop.png") no-repeat scroll 0% 0% transparent;
+	position: absolute;
+	right: 0px;
+}
+
+.ju-contentslider .ju-slider-pause {
+	background: url("images/pause.png") no-repeat scroll 0% 0% transparent;
+}
+
+.ju-contentslider .ju-slider-play {
+	background: url("images/play.png") no-repeat scroll 0% 0% transparent;
+	position: absolute;
+	right: 0px;
+}

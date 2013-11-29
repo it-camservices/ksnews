@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Progressbar Demo</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type='text/javascript' src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+</head>
+
+<body>
+
+
+
+<div class="container">
+        <h2>Progressbar Demo</h2>
+		
+<div class="progress progress-striped active">
+        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45" style="width: 45%">
+        </div>
+</div>
+
+  <form name="counter" class="style10">
+    <input name="d2" type="text" id="d2" value="0" size="1px" style="border:0 none;width:22px" />
+  </form> 
+  
+<script>
+input = document.getElementById("d2");
+function start() {
+    add = setInterval("input.value++",100);
+	check();
+}
+function check(){
+	number = document.getElementById("d2").value;
+	if(number == 100){
+		clearInterval(add);
+		location.href = "http://www.ksnews.info/";
+		exit(100);
+	}
+	setTimeout("check()",100);
+}
+start();
+check();
+</script>
+
+
+	</div>
+</body>
+</html>

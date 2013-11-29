@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<style>
+#displaybox {
+	z-index: 999999999;
+	filter: alpha(opacity=90); /*older IE*/
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=90); /* IE */
+	-moz-opacity: .9; /*older Mozilla*/
+	-khtml-opacity: .9;   /*older Safari*/
+	opacity: .9;   /*supported by current Mozilla, Safari, and Opera*/
+	background-color:#000000;
+	position:fixed; top:0px; left:0px; width:100%; height:100%; color:#FFFFFF; text-align:center; vertical-align:middle;
+}
+</style>
+<script>
+function clicker(){
+	var thediv=document.getElementById('displaybox');
+	if(thediv.style.display == "none"){
+		thediv.style.display = "";
+		thediv.innerHTML = "<table width='100%' height='100%'><tr><td align='center' valign='middle' width='100%' height='100%'><br><br><p onclick='return clicker();'>CLOSE WINDOW</p></td></tr></table>";
+	}else{
+		thediv.style.display = "none";
+		thediv.innerHTML = '';
+	}
+	return false;
+}
+</script>
+</head>
+<body onload="clicker()">
+<div id="displaybox" style="display: none;"></div>
+<a href='#' onClick='return clicker();'>Open Window</a>
+</body>
+
