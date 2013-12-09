@@ -19,21 +19,20 @@
       <li class="active"><a href="./"><i class="fa fa-home"> </i></a></li>
     <?php 
         $menuObj = new Menu();
-        $menus = $menuObj->getAll("ORDER BY indexs ASC");
+        $menus = $menuObj->getAllMenu();
         foreach($menus as $menu):
           if($menuObj->checkSubmenu($menu->id)){
     ?> 
-            <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="fa fa-flag-checkered"></i>&nbsp; <?php echo $menu->menu ?><b class="caret"></b></a>
+            <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="<?php echo $menu->icon_pic ?>"></i>&nbsp; <?php echo $menu->menu ?><b class="caret"></b></a>
     <?php }else{ ?>
-            <li><a href="?active=<?php echo md5($menu->id) ?>&cate=<?php echo $menu->category_id ?>"><i class="fa fa-flag-checkered"></i>&nbsp; <?php echo $menu->menu ?></a>
+            <li><a href="?menu=<?php echo $menu->id ?>&cate=<?php echo $menu->category_id ?>"><i class="<?php echo $menu->icon_pic ?>"></i>&nbsp; <?php echo $menu->menu ?></a>
     <?php } ?>
         <ul class="dropdown-menu">
     <?php  
-        $submenuObj = new SubMenu();
-        $submenus = $submenuObj->getByMenu($menu->id);
+        $submenus = $menuObj->getAllSubMenu($menu->id);
         foreach($submenus as $submenu):
     ?>
-          <li><a href="?active=<?php echo md5($menu->category_id) ?>&cate=<?php echo $submenu->category_id; ?>"><i class="fa fa-star"> </i> &nbsp;<?php echo $submenu->submenu; ?></a></li>
+          <li><a href="?menu=<?php echo $menu->category_id ?>&cate=<?php echo $submenu->category_id; ?>"><i class="<?php echo $submenu->icon_pic ?>"> </i> &nbsp;<?php echo $submenu->menu; ?></a></li>
     <?php endforeach ?>
         </ul>
       </li>

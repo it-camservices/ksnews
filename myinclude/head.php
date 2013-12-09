@@ -1,4 +1,4 @@
-<?php require_once 'config/config.php' ?>
+<?php require_once 'admin/config/config.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,4 +22,13 @@
 	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 	<![endif]-->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+	<script type="text/javascript">
+		CKEDITOR.replace( 'editor1',
+	    {
+	        filebrowserBrowseUrl : '/browser/browse.php',
+	        filebrowserImageBrowseUrl : '/browser/browse.php?type=Images',
+	        filebrowserUploadUrl : '/uploader/upload.php',
+	        filebrowserImageUploadUrl : '/uploader/upload.php?type=Images'
+	    });
+	</script>
 <title>Welcome To KSNEWS - The Breaking News in Cambodia Nation news and International news, Sport news, Traditional News...</title>

@@ -1,0 +1,53 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+@font-face {  font-family: 'Suwannaphum';  font-style: normal;  font-weight: 400;  src: local('Suwannaphum'), url(fonts/Suwannaphum.woff) format('woff');}
+@font-face {  font-family: 'Hanuman';  font-style: normal;  font-weight: 400;  src: local('Hanuman'), url(fonts/Hanuman.woff) format('woff');}
+@font-face { font-family: 'Khmer';  font-style: normal;  font-weight: 400;  src: local('Khmer'), url(fonts/khmerfont.woff) format('woff');}
+html,
+body {  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, Suwannaphum, Hanuman, Khmer; }
+*{font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, Suwannaphum, Hanuman, Khmer;}
+.form-horizontal .control-label, .form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 7px;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {min-height: 100%; height: auto; margin: 0 auto -50px; padding: 0 0 50px;}
+#footer { height: 50px;  background-color: #222222; color: #FFF;}
+#wrap > .container {padding: 0 15px 0;}
+.container .credit {margin: 20px 0;}
+#footer > .container { padding-left: 15px; padding-right: 15px; padding-top: 20px;}
+code { font-size: 80%;}
+img{max-width:100% !important;display:block;}
+#gallery>a>img{height: 120px; width:180px; display: inline-block; border: solid 5px #CCC;-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px; margin-bottom: 5px;
+}
+#gallery>a>img:hover { border: #000 solid 0px;}
+.font-awe>select, .font-awe>select>option {font-family:'FontAwesome', Arial;}
+button.multiselect {background-color: #FFFFFF;}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 999px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background: red;
+    cursor: inherit;
+    display: block;
+}
+input[readonly] {
+	background-color: white !important;
+	cursor: text !important;
+}

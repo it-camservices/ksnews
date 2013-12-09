@@ -4,13 +4,13 @@
 <?php
 	$artObj = new Article();
 	$articles = $artObj->getAll();
-	foreach($articles as $article){
+	foreach($articles as $article):
 ?>
-		  		<a href="#news-one" class="list-group-item ">
-					<p class="list-group-item-text"><?php echo $article->title ?>...</p>
-		  		</a>		  		
+	<a href="#news-one" class="list-group-item ">
+		<p class="list-group-item-text"><?php echo $article->title ?>...</p>
+	</a>		  		
 <?php
-			}
+	endforeach
 ?>
 		</div>
 	</div>
