@@ -1,4 +1,3 @@
-
 <?php include_once("myinclude/head.php"); ?>
 <?php //include_once("myinclude/popup_full_screen.php"); ?>
 </head>

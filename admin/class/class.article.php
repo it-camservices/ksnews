@@ -1,5 +1,5 @@
 <?php
-require_once "class.model.php";
+
 class Article extends Model{
 
 	protected $table_name = "tbl_article";

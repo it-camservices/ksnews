@@ -87,13 +87,13 @@
 		            <div class="col-sm-9">   
 		           		<div class="btn-group" data-toggle="buttons">
 		          			<label class="btn btn-default <?php if((isset($data->frontpage) && $data->frontpage==0) OR !isset($data->frontpage)) echo ' active' ?>">
-		              		<input type="radio" name="frontpage" id="inputWalls" value="0" <?php if(isset($data->frontpage) && $data->frontpage==0) echo " checked" ?>> Front Page (No) </label>
+		              		<input type="radio" name="frontpage" id="inputWalls" value="0" <?php if((isset($data->frontpage) && $data->frontpage==0) OR !isset($data->frontpage)) echo " checked" ?>> Front Page (No) </label>
 		          			<label class="btn btn-default <?php if(isset($data->frontpage) && $data->frontpage==1) echo ' active' ?>">
 		              		<input type="radio" name="frontpage" id="inputWalls" value="1" <?php if(isset($data->frontpage) && $data->frontpage==1) echo " checked" ?>> Front Page (Yes) </label>
 		      			</div>
 		      			<div class="btn-group" data-toggle="buttons">
 		          			<label class="btn btn-default <?php if((isset($data->published) && $data->published==0) OR !isset($data->published)) echo ' active' ?>">
-		              		<input type="radio" name="publish" id="inputWalls" value="0" <?php if(isset($data->published) && $data->published==0) echo " checked" ?>> Unpublish </label>
+		              		<input type="radio" name="publish" id="inputWalls" value="0" <?php if((isset($data->published) && $data->published==0) OR !isset($data->published)) echo " checked" ?>> Unpublish </label>
 		          			<label class="btn btn-default <?php if(isset($data->published) && $data->published==1) echo ' active' ?>" >
 		              		<input type="radio" name="publish" id="inputWalls" value="1" <?php if(isset($data->published) && $data->published==1) echo " checked" ?>> Publish </label>
 		      			</div>
@@ -126,46 +126,46 @@
 								  		<div class="input-group">
 											<span class="input-group-btn">
 												<span class="btn btn-primary btn-file">
-													<i class="fa fa-picture-o"></i> <input type="file" multiple>
+													<i class="fa fa-picture-o"></i> <input type="file" name="f-img1" multiple>
 												</span>
 											</span>
-											<input type="text" name="f-img" id="f-img" class="form-control" readonly placeholder="image 1">
+											<input type="text" name="f-img1" id="f-img" class="form-control" readonly placeholder="image 1">
 										</div>
 										<br>
 								  		<div class="input-group">
 											<span class="input-group-btn">
 												<span class="btn btn-primary btn-file">
-													<i class="fa fa-picture-o"></i> <input type="file" multiple>
+													<i class="fa fa-picture-o"></i> <input type="file" name="f-img2" multiple>
 												</span>
 											</span>
-											<input type="text" name="f-img" id="f-img" class="form-control" readonly placeholder="image 2">
+											<input type="text" name="f-img2" id="f-img" class="form-control" readonly placeholder="image 2">
 										</div>
 <br>
 								  		<div class="input-group">
 											<span class="input-group-btn">
 												<span class="btn btn-primary btn-file">
-													<i class="fa fa-picture-o"></i> <input type="file" multiple>
+													<i class="fa fa-picture-o"></i> <input type="file" name="f-img3" multiple>
 												</span>
 											</span>
-											<input type="text" name="f-img" id="f-img" class="form-control" readonly placeholder="image 3">
+											<input type="text" name="f-img3" id="f-img" class="form-control" readonly placeholder="image 3">
 										</div>
 <br>
 								  		<div class="input-group">
 											<span class="input-group-btn">
 												<span class="btn btn-primary btn-file">
-													<i class="fa fa-picture-o"></i> <input type="file" multiple>
+													<i class="fa fa-picture-o"></i> <input type="file" name="f-img4" multiple>
 												</span>
 											</span>
-											<input type="text" name="f-img" id="f-img" class="form-control" readonly placeholder="image 4">
+											<input type="text" name="f-img4" id="f-img" class="form-control" readonly placeholder="image 4">
 										</div>
 <br>
 								  		<div class="input-group">
 											<span class="input-group-btn">
 												<span class="btn btn-primary btn-file">
-													<i class="fa fa-picture-o"></i> <input type="file" multiple>
+													<i class="fa fa-picture-o"></i> <input type="file" name="f-img5" multiple>
 												</span>
 											</span>
-											<input type="text" name="f-img" id="f-img" class="form-control" readonly placeholder="image 5">
+											<input type="text" name="f-img5" id="f-img" class="form-control" readonly placeholder="image 5">
 										</div>
 
 		  							</div>
@@ -174,46 +174,46 @@
 								  		<div class="input-group">
 											<span class="input-group-btn">
 												<span class="btn btn-primary btn-file">
-													<i class="fa fa-picture-o"></i> <input type="file" multiple>
+													<i class="fa fa-picture-o"></i> <input type="file" name="f-img6" multiple>
 												</span>
 											</span>
-											<input type="text" name="f-img" id="f-img" class="form-control" readonly placeholder="image 6">
+											<input type="text" name="f-img6" id="f-img" class="form-control" readonly placeholder="image 6">
 										</div>
 										<br>
 								  		<div class="input-group">
 											<span class="input-group-btn">
 												<span class="btn btn-primary btn-file">
-													<i class="fa fa-picture-o"></i> <input type="file" multiple>
+													<i class="fa fa-picture-o"></i> <input type="file" name="f-img7" multiple>
 												</span>
 											</span>
-											<input type="text" name="f-img" id="f-img" class="form-control" readonly placeholder="image 7">
+											<input type="text" name="f-img7" id="f-img" class="form-control" readonly placeholder="image 7">
 										</div>
 <br>
 								  		<div class="input-group">
 											<span class="input-group-btn">
 												<span class="btn btn-primary btn-file">
-													<i class="fa fa-picture-o"></i> <input type="file" multiple>
+													<i class="fa fa-picture-o"></i> <input type="file" name="f-img8" multiple>
 												</span>
 											</span>
-											<input type="text" name="f-img" id="f-img" class="form-control" readonly placeholder="image 8">
+											<input type="text" name="f-img8" id="f-img" class="form-control" readonly placeholder="image 8">
 										</div>
 <br>
 								  		<div class="input-group">
 											<span class="input-group-btn">
 												<span class="btn btn-primary btn-file">
-													<i class="fa fa-picture-o"></i> <input type="file" multiple>
+													<i class="fa fa-picture-o"></i> <input type="file" name="f-img9" multiple>
 												</span>
 											</span>
-											<input type="text" name="f-img" id="f-img" class="form-control" readonly placeholder="image 9">
+											<input type="text" name="f-img9" id="f-img" class="form-control" readonly placeholder="image 9">
 										</div>
 <br>
 								  		<div class="input-group">
 											<span class="input-group-btn">
 												<span class="btn btn-primary btn-file">
-													<i class="fa fa-picture-o"></i> <input type="file" multiple>
+													<i class="fa fa-picture-o"></i> <input type="file" name="f-img10" multiple>
 												</span>
 											</span>
-											<input type="text" name="f-img" id="f-img" class="form-control" readonly placeholder="image 10">
+											<input type="text" name="f-img10" id="f-img" class="form-control" readonly placeholder="image 10">
 										</div>
 		  							</div>
 		  							</div>

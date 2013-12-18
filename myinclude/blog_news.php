@@ -13,7 +13,7 @@
 		  <i style="font-size:10px; color:#ccc;"><i class="fa fa-calendar"></i>  ថ្ងៃទី 07 ខែ 11 ឆ្នាំ 2013 វេលាម៉ោង 09:47 នាទី  </i>
 		  <div class="caption">
 		   <h4>
-		   		<a href="?cate=<?php echo $cate . '&page=' . $article->id ?>">
+		   		<a href="index.php?cate=<?php echo $cate . '&page=' . $article->id ?>">
 			   <?php 
 			   		$title = $article->title;
 					if(strlen($title)>100){
@@ -46,7 +46,7 @@
 					}
 				?>
 			</p>
-			<p><a href="/?menu=1&page=<?php echo $article->id ?>" class="btn btn-primary" role="button" data-original-title="ចុចដើម្បីអានបន្តព័ត៌មាននេះ" data-toggle="tooltip" data-placement="top"><i class="fa fa-eye"></i> អានបន្ត...</a></p>
+			<p><a href="index.php?menu=1&page=<?php echo $article->id ?>" class="btn btn-primary" role="button" data-original-title="ចុចដើម្បីអានបន្តព័ត៌មាននេះ" data-toggle="tooltip" data-placement="top"><i class="fa fa-eye"></i> អានបន្ត...</a></p>
 		  </div>
 		</div>
 	</div>
@@ -62,10 +62,25 @@
 		if(isset($page)){
 			$artObj = new Article();
 			$article = $artObj->getById($page);
-			echo "<div class=\"caption\">";
-			echo "<h4 style='color:red; padding-left:10px;'>".$article->title."</h4>";
-			echo "<p style='padding:10px; text-align:justify;'>".$article->description."</p>";
-			echo "</div>";
+		?>
+			<div class="caption">
+			<h4 style="color:blue"><?php echo $article->title ?></h4>
+			<?php echo $article->description ?>
+		<?php
+			$artObj->closeConnection();
+			$photoObj = new Photo();
+			$photos = $photoObj->getByArticle($page);
+			if($photos>0){
+				foreach($photos as $photo):
+		?>
+					<img src="images/gallery/<?php echo $photo['article']."/".$photo['photo'] ?>" alt="<?php echo $photo['title'] ?>" /><br />
+		<?php
+				endforeach;
+			}
+			$photoObj->closeConnection(); 
+		?>
+			</div>
+		<?php
 		}elseif(isset($cate)){
 			$artObj = new Article();
 			$articles = $artObj->getByCategory($cate);
@@ -81,7 +96,7 @@
 		  <i style="font-size:10px; color:#ccc;"><i class="fa fa-calendar"></i>  ថ្ងៃទី 07 ខែ 11 ឆ្នាំ 2013 វេលាម៉ោង 09:47 នាទី  </i>
 		  <div class="caption">
 		   <h4>
-		   		<a href="?cate=<?php echo $cate . '&page=' . $article['id'] ?>">
+		   		<a href="index.php?cate=<?php echo $cate . '&page=' . $article['id'] ?>">
 			   <?php 
 			   		$title = $article['title'];
 					if(strlen($title)>100){
@@ -109,7 +124,7 @@
 					}
 				?>
 			</p>
-			<p><a href="/?menu=1&page=<?php echo $article['id'] ?>" class="btn btn-primary" role="button" data-original-title="ចុចដើម្បីអានបន្តព័ត៌មាននេះ" data-toggle="tooltip" data-placement="top"><i class="fa fa-eye"></i> អានបន្ត...</a></p>
+			<p><a href="index.php?menu=1&page=<?php echo $article['id'] ?>" class="btn btn-primary" role="button" data-original-title="ចុចដើម្បីអានបន្តព័ត៌មាននេះ" data-toggle="tooltip" data-placement="top"><i class="fa fa-eye"></i> អានបន្ត...</a></p>
 		  </div>
 		</div>
 	</div>
@@ -120,4 +135,5 @@
 	//if($i%3!=1){echo '</div>';}
 	}
 	}
+	$artObj->closeConnection();
 ?>

@@ -7,9 +7,9 @@ class Controller{
 	private $id;
 
 	public function controlAction($page, $action, $id=NULL){
-		$this->page = mysql_real_escape_string($page);
-		$this->action = mysql_real_escape_string($action);
-		$this->id = mysql_real_escape_string($id);
+		$this->page = intval($page);
+		$this->action = intval($action);
+		$this->id = intval($id);
 		switch ($this->page) {
 			case 1: // Category
 				switch ($this->action) {
@@ -58,7 +58,7 @@ class Controller{
 						else{
 							return $this->loadEditArticle();
 						}
-						header("Location: /admin?page=3&action=new");
+						header("Location: /admin/index.php?page=3&action=new");
 						break;
 					case 'save':
 						$this->saveArticle();
@@ -222,8 +222,31 @@ class Controller{
 		return $article;
 	}
 
+	protected function pictureGallery(){
+		$images = func_get_args();
+		$directory = array_shift($images);
+		$data = array();
+		for($i=0; $i<count($images); $i++){
+			if(!is_dir("../images/gallery/".$directory)){
+				mkdir("../images/gallery/".$directory);
+			}
+			if(!empty($images[$i]['tmp_name'])){
+				$tmp = $images[$i]['tmp_name'];
+				$image = $images[$i]['name'];
+				if(file_exists("../images/gallery/".$directory."/".$image)){
+					unlink("../images/gallery/".$directory."/".$image);
+				}
+				move_uploaded_file($tmp, "../images/gallery/".$directory."/".$image);
+				$data[] = $image;
+			}
+		}
+		return $data;
+	}
+
 	protected function saveArticle(){
+		
 		$articleObject = new Article();
+
 		if(isset($_POST['id']) && intval($_POST['id'])>0){ 
 			$id = mysql_real_escape_string(intval($_POST['id']));
 			$article = $articleObject->getById($this->id);
@@ -239,6 +262,7 @@ class Controller{
 			$article->published = $_POST['publish'];
 			$category_id = implode(',', $_POST['category']);
 			$article->category_id = $category_id;
+
 			if(!empty($_FILES['frontImage']['tmp_name'])){
 				$tmp = $_FILES['frontImage']['tmp_name'];
 				$frontImage = $articleObject->db->real_escape_string($_FILES['frontImage']['name']);
@@ -250,9 +274,10 @@ class Controller{
 				}
 			}
 			if($article->save()){
-				header("Location: /admin/?page=3&action=new");
+				header("Location: /admin/index.php?page=3&action=new");
 			}
 		}else{ 
+
 			$articleObject->title = $_POST['title'];
 			$articleObject->address = $_POST['address'];
 			$articleObject->author = $_POST['author'];
@@ -273,7 +298,21 @@ class Controller{
 				unlink("../images/front/".$frontImage);
 			}
 			if($articleObject->save()){
-				header("Location: /admin/?page=3&action=new");
+				$article_id = $articleObject->id;
+				$photos = $this->pictureGallery($article_id, $_FILES['f-img1'], $_FILES['f-img2'], $_FILES['f-img3'], $_FILES['f-img4'], $_FILES['f-img5'], $_FILES['f-img6'], $_FILES['f-img7'], $_FILES['f-img8'],$_FILES['f-img9'], $_FILES['f-img10']); 
+				$articleObject->closeConnection();
+				if(count($photos)>0){
+					for($i=0; $i<count($photos); $i++){
+						$photo = new Photo();
+						$photo->title = $_POST['title'];
+						$photo->photo = $photos[$i];
+						$photo->date_inserted = date('Y-m-d');
+						$photo->article = $article_id;
+						$photo->save();
+						$photo->closeConnection();
+					}
+				}
+				header("Location: /admin/index.php?page=3&action=new");
 			}
 		}
 	}
@@ -291,18 +330,10 @@ class Controller{
 
 }
 
-if(isset($_GET['page']))
-	$page = $_GET['page'];
-else
-	$page = null;
-if(isset($_GET['action']))
-	$action = $_GET['action'];
-else
-	$action = null;
-if(isset($_REQUEST['id']))
-	$id = $_REQUEST['id'];
-else
-	$id = null;
+isset($_GET['page']) ? $page = $_GET['page'] : $page = null;
+isset($_GET['action']) ? $action = $_GET['action'] : $action = null;
+isset($_REQUEST['id']) ? $id = $_REQUEST['id'] : $id = null;
+
 $controller = new Controller();
 $data = $controller->controlAction($page, $action, $id);
 

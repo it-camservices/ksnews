@@ -1,5 +1,4 @@
 <?php
-require_once "class.model.php";
 class Menu extends Model{
 
 	protected $table_name = "tbl_menu";

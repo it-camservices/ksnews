@@ -25,14 +25,14 @@
     ?> 
             <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="<?php echo $menu->icon_pic ?>"></i>&nbsp; <?php echo $menu->menu ?><b class="caret"></b></a>
     <?php }else{ ?>
-            <li><a href="?menu=<?php echo $menu->id ?>&cate=<?php echo $menu->category_id ?>"><i class="<?php echo $menu->icon_pic ?>"></i>&nbsp; <?php echo $menu->menu ?></a>
+            <li><a href="index.php?menu=<?php echo $menu->id ?>&cate=<?php echo $menu->category_id ?>"><i class="<?php echo $menu->icon_pic ?>"></i>&nbsp; <?php echo $menu->menu ?></a>
     <?php } ?>
         <ul class="dropdown-menu">
     <?php  
         $submenus = $menuObj->getAllSubMenu($menu->id);
         foreach($submenus as $submenu):
     ?>
-          <li><a href="?menu=<?php echo $menu->category_id ?>&cate=<?php echo $submenu->category_id; ?>"><i class="<?php echo $submenu->icon_pic ?>"> </i> &nbsp;<?php echo $submenu->menu; ?></a></li>
+          <li><a href="index.php?menu=<?php echo $menu->category_id ?>&cate=<?php echo $submenu->category_id; ?>"><i class="<?php echo $submenu->icon_pic ?>"> </i> &nbsp;<?php echo $submenu->menu; ?></a></li>
     <?php endforeach ?>
         </ul>
       </li>

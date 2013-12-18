@@ -1,5 +1,4 @@
 <?php
-require_once "class.database.php";
 class Model{
 	
 	private $table_name;
